@@ -61,7 +61,6 @@ public class InputBehaviourPrototype : Fusion.Behaviour, INetworkRunnerCallbacks
       frameworkInput.Buttons.Set(NetworkInputPrototype.BUTTON_FIRE, true);
     }
 
-    input.Set(frameworkInput);
   }
 
   public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }
@@ -91,6 +90,16 @@ public class InputBehaviourPrototype : Fusion.Behaviour, INetworkRunnerCallbacks
   public void OnHostMigration(NetworkRunner runner, HostMigrationToken hostMigrationToken) {
 
   }
+
+    public void OnInput(NetworkRunner runner, Fusion.NetworkInput input)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnInputMissing(NetworkRunner runner, PlayerRef player, Fusion.NetworkInput input)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 /// <summary>
