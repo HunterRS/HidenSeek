@@ -24,7 +24,6 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
             //Sets the layer of the local players model
 
             //Disable main camera
-            Camera.main.gameObject.SetActive(false);
 
             Debug.Log("Spawned local player");
         }

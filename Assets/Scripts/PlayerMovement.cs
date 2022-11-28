@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 
-public class CharacterMovementHandler : NetworkBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     //Other components
-    SeekerCharacterController networkCharacterControllerPrototypeCustom;
+    SeekerCharacterController seekerCharacterController;
 
     private void Awake()
     {
-        networkCharacterControllerPrototypeCustom = GetComponent<SeekerCharacterController>();
+        seekerCharacterController = GetComponent<SeekerCharacterController>();
     }
 
     // Start is called before the first frame update
@@ -35,11 +35,11 @@ public class CharacterMovementHandler : NetworkBehaviour
             Vector3 moveDirection = transform.forward * networkInputData.movementInput.y + transform.right * networkInputData.movementInput.x;
             moveDirection.Normalize();
 
-            networkCharacterControllerPrototypeCustom.Move(moveDirection);
+            seekerCharacterController.Move(moveDirection);
 
             //Jump
             if (networkInputData.isJumpPressed)
-                networkCharacterControllerPrototypeCustom.Jump();
+                seekerCharacterController.Jump();
 
             //Check if we've fallen off the world.
         }

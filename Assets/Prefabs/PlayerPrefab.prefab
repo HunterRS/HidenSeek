@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 2838169913062289061}
   - component: {fileID: 7708116941662269187}
   m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
+  m_Name: PlayerCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 7096866705751000518}
   - component: {fileID: 2512097970803384729}
   - component: {fileID: 519183368554642629}
+  - component: {fileID: 8668473247964772977}
   m_Layer: 6
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -217,6 +218,7 @@ MonoBehaviour:
   - {fileID: 4065374778257232135}
   - {fileID: 5441030324384110532}
   - {fileID: 519183368554642629}
+  - {fileID: 8668473247964772977}
   SimulationBehaviours: []
 --- !u!114 &8815895893571785557
 MonoBehaviour:
@@ -314,8 +316,8 @@ MonoBehaviour:
   jumpImpulse: 8
   acceleration: 10
   braking: 10
-  maxSpeed: 2
-  rotationSpeed: 15
+  maxSpeed: 5
+  rotationSpeed: 150
   viewUpDownRotationSpeed: 50
   _IsGrounded: 0
   _Velocity: {x: 0, y: 0, z: 0}
@@ -364,6 +366,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   playerModel: {fileID: 0}
+--- !u!114 &8668473247964772977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8815895893571785564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 738081ad08764de4d9fe73235cb92cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
 --- !u!1001 &9109581309836244426
 PrefabInstance:
   m_ObjectHideFlags: 0

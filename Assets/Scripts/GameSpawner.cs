@@ -43,9 +43,10 @@ public class GameSpawner : MonoBehaviour , INetworkRunnerCallbacks
         _runner.SetActiveScene(gameSceneName);
     }
 
-    public void OnInput(NetworkRunner runner, NetworkInput input)
+    public void OnInput(NetworkRunner runner, Fusion.NetworkInput input)
     {
         if (cameraInput == null && NetworkPlayer.Local != null)
+            Debug.Log("Test");
             cameraInput = NetworkPlayer.Local.GetComponent<CameraInput>();
 
         if (cameraInput != null)
@@ -57,7 +58,7 @@ public class GameSpawner : MonoBehaviour , INetworkRunnerCallbacks
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player) { }
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player) { }
    // public void OnInput(NetworkRunner runner, NetworkInput input) { }
-    public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }
+    public void OnInputMissing(NetworkRunner runner, PlayerRef player, Fusion.NetworkInput input) { }
     public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason) { }
     public void OnConnectedToServer(NetworkRunner runner) { }
     public void OnDisconnectedFromServer(NetworkRunner runner) { }
@@ -71,15 +72,7 @@ public class GameSpawner : MonoBehaviour , INetworkRunnerCallbacks
     public void OnSceneLoadDone(NetworkRunner runner) { }
     public void OnSceneLoadStart(NetworkRunner runner) { }
 
-    public void OnInput(NetworkRunner runner, Fusion.NetworkInput input)
-    {
-        throw new NotImplementedException();
-    }
 
-    public void OnInputMissing(NetworkRunner runner, PlayerRef player, Fusion.NetworkInput input)
-    {
-        throw new NotImplementedException();
-    }
 }
 
 
