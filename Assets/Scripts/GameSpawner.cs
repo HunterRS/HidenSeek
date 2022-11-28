@@ -45,12 +45,12 @@ public class GameSpawner : MonoBehaviour , INetworkRunnerCallbacks
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
-        if (cameraInput == null && playerObject.Local != null)
+       /* if (cameraInput == null && playerObject.Local != null)
             cameraInput = playerObject.Local.GetComponent<cameraInput>();
 
         if (cameraInput != null)
             input.Set(cameraInput.GetNetworkInput());
-
+            */
     }
 
 
