@@ -20,8 +20,8 @@ public class CharacterMovementHandler : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-      /*  //Get the input from the network
-        if (GetInput(out NetworkInputData networkInputData))
+        //Get the input from the network
+        if (GetInput(out NetworkInput networkInputData))
         {
             //Rotate the transform according to the client aim vector
             transform.forward = networkInputData.aimForwardVector;
@@ -42,6 +42,6 @@ public class CharacterMovementHandler : NetworkBehaviour
                 networkCharacterControllerPrototypeCustom.Jump();
 
             //Check if we've fallen off the world.
-        }*/
+        }
     }
 }

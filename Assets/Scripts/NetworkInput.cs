@@ -10,4 +10,8 @@ public struct NetworkInput : INetworkInput
     public Vector3 aimForwardVector;
     public NetworkBool isJumpPressed;
 
+    internal void Set(NetworkInput networkInput)
+    {
+        throw new NotImplementedException();
+    }
 }

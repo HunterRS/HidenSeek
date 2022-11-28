@@ -7,6 +7,7 @@ public class SeekingGame : NetworkBehaviour
 {
 
     public NetworkObject playerPrefab;
+    public NetworkObject playerObject;
     public Transform spawnPosition;
 
     public override void Spawned()
