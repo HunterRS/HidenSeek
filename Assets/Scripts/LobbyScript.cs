@@ -18,7 +18,7 @@ public class LobbyScript : NetworkBehaviour
     // Start is called before the first frame update
     public void FixedUpdate()
     {
-        //txtConnected.text = "Players Connected: " + _cSpawner._runner.ActivePlayers.Count().ToString();
+        txtConnected.text = "Players Connected: " + _cSpawner._runner.ActivePlayers.Count().ToString();
     }
 
 
