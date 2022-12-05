@@ -8,13 +8,15 @@ public class SeekingGame : NetworkBehaviour
 
     public NetworkObject playerPrefab;
     public NetworkObject playerObject;
-    public Transform spawnPosition;
+    public Transform[] spawnPosition;
+    public int spawnNum = -1;
 
     public override void Spawned()
     {
         foreach (var player in Runner.ActivePlayers)
         {
-            NetworkObject playerObject = Runner.Spawn(playerPrefab, spawnPosition.position, Quaternion.identity, player);
+            spawnNum += 1;
+            NetworkObject playerObject = Runner.Spawn(playerPrefab, spawnPosition[spawnNum].position, Quaternion.identity, player);
             Runner.SetPlayerObject(player, playerObject);
             Runner.SetPlayerAlwaysInterested(player, playerObject, true);
         }

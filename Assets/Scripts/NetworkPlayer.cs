@@ -9,6 +9,7 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
 
     public Transform playerModel;
 
+
     // Start is called before the first frame update
     void Start()
     {

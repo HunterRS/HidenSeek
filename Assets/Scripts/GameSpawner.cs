@@ -46,12 +46,16 @@ public class GameSpawner : MonoBehaviour , INetworkRunnerCallbacks
     public void OnInput(NetworkRunner runner, Fusion.NetworkInput input)
     {
         if (cameraInput == null && NetworkPlayer.Local != null)
+        {
             Debug.Log("Test");
             cameraInput = NetworkPlayer.Local.GetComponent<CameraInput>();
+        }
 
         if (cameraInput != null)
+        {
             input.Set(cameraInput.GetNetworkInput());
-            
+        }
+
     }
 
 
