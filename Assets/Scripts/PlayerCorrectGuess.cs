@@ -32,19 +32,33 @@ public class PlayerCorrectGuess : NetworkBehaviour
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
-    public void RPC_WinGame(RpcInfo info = default)
+    public void RPC_WinGame(int host, RpcInfo info = default)
     {
         UI = GameObject.FindWithTag("GuessUI");
 
         TextMeshProUGUI mText = UI.GetComponent<TextMeshProUGUI>();
-        mText.text = "PLAYER WON";
+
+        if (host == 0)
+        {
+            mText.text = "Host wins!";
+        }
+        else if (host == 1)
+        {
+            mText.text = "Client wins!";
+        }
     }
 
     private void OnMouseDown()
     {
-        RPC_WinGame();
         //PlayerWon = true;
         Debug.Log(Runner.LocalPlayer.PlayerId);
-
+        if (Runner.LocalPlayer.PlayerId == 0)
+        {
+            RPC_WinGame(1);
+        }
+        else if (Runner.LocalPlayer.PlayerId != 0)
+        {
+            RPC_WinGame(0);
+        }
     }
 }
